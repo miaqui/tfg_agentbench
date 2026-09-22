@@ -1,0 +1,15 @@
+import: definition.yaml
+
+concurrency:
+  task:
+    webshop-std: 1
+  agent:
+    latxa: 1
+
+assignments:
+  - agent:
+      - latxa
+    task:
+      - webshop-std
+
+output: "outputs/{TIMESTAMP}"

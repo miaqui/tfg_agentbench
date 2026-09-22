@@ -1,0 +1,106 @@
+mistral-host:
+    import: "./ollama.yaml"
+    parameters:
+        name: "mistral-host"
+        url: "http://host.docker.internal:11435/v1/chat/completions"
+        body:
+            model: "mistral"
+            max_tokens: 512
+
+text-davinci-003:
+    import: "./openai-text.yaml"
+    parameters:
+        name: "text-davinci-003"
+        body:
+            model: "text-davinci-003"
+            max_tokens: 512
+
+text-davinci-002:
+    import: "./openai-text.yaml"
+    parameters:
+        name: "text-davinci-002"
+        body:
+            model: "text-davinci-002"
+            max_tokens: 512
+
+latxa:
+    import: "./openai-chat.yaml"
+    parameters:
+        name: "latxa"
+        body:
+            model: "Latxa-Llama-3.1-70B-Instruct-exp_2_101_v2-FP8"
+            max_tokens: 4096
+
+ollama-qwen3:
+    import: "./ollama.yaml"
+    parameters:
+        name: "ollama-qwen3"
+        body:
+            model: "qwen3:8b"
+            max_tokens: 512
+
+ollama-qwen3-think:
+    import: "./ollama-think.yaml"
+    parameters:
+        name: "ollama-qwen3-think"
+        body:
+            model: "qwen3:8b"
+
+ollama-qwen3-nothink:
+    import: "./ollama-nothink.yaml"
+    parameters:
+        name: "ollama-qwen3-nothink"
+        body:
+            model: "qwen3:8b"
+            think: false
+
+ollama-gemma:
+    import: "./ollama-gemma.yaml"
+    parameters:
+        name: "ollama-gemma"
+        body:
+            model: "gemma3:12b"
+            max_tokens: 2048
+
+vllm-gemma3:
+    import: "./vllm-gemma3.yaml"
+    parameters:
+        name: "vllm-gemma3"
+
+vllm-gemma4:
+    import: "./vllm-gemma4.yaml"
+    parameters:
+        name: "vllm-gemma4"
+
+# --- NUEVO: agente de merge para ltp-majority ---
+merge-llama:
+    import: "./ollama.yaml"
+    parameters:
+        name: "merge-llama"
+        url: "http://host.docker.internal:11435/v1/chat/completions"
+        body:
+            model: "llama3.1:8b"
+            max_tokens: 128
+
+ollama-qwen3-think-docker:
+    import: "./ollama-think.yaml"
+    parameters:
+        name: "ollama-qwen3-think-docker"
+        url: "http://host.docker.internal:11435/api/chat"
+        body:
+            model: "qwen3:8b"
+
+ollama-qwen3-nothink-docker:
+    import: "./ollama-nothink.yaml"
+    parameters:
+        name: "ollama-qwen3-nothink-docker"
+        url: "http://host.docker.internal:11435/api/chat"
+        body:
+            model: "qwen3:8b"
+            think: false
+
+vllm-gemma4-docker:
+    import: "./vllm-gemma4.yaml"
+    parameters:
+        name: "vllm-gemma4-docker"
+        url: "http://host.docker.internal:11436/v1/chat/completions"

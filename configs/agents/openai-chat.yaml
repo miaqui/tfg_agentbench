@@ -1,0 +1,14 @@
+module: src.client.agents.HTTPAgent
+parameters:
+  url: https://zerbitzuak.hitz.eus/latxa/v1/chat/completions
+  headers:
+    Content-Type: application/json
+    Authorization: Bearer Ctglb08DvxqeuJzxmMmDOHO9vKr3rGKx
+  body:
+    model: Latxa-Llama-3.1-70B-Instruct-exp_2_101_v2-FP8
+    temperature: 0
+  prompter:
+    name: role_content_dict
+    args:
+      agent_role: assistant
+  return_format: "{response[choices][0][message][content]}"

@@ -1,0 +1,15 @@
+import: definition.yaml
+
+concurrency:
+  task:
+    webshop-std: 1
+  agent:
+    vllm-gemma4: 1
+
+assignments:
+  - agent:
+      - vllm-gemma4
+    task:
+      - webshop-std
+
+output: "outputs/{TIMESTAMP}"

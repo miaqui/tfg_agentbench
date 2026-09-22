@@ -1,0 +1,6 @@
+definition:
+  import: tasks/task_assembly.yaml
+
+start:
+  ltp-majority-std: 1
+  ltp-majority-full: 1

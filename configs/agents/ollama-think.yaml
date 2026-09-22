@@ -1,0 +1,18 @@
+module: src.client.agents.HTTPAgent
+parameters:
+  url: http://localhost:11435/api/chat
+  headers:
+    Content-Type: application/json
+  body:
+    model: qwen3:8b
+    temperature: 0
+    think: true
+    stream: false
+    options:
+      num_predict: 2048
+  prompter:
+    name: role_content_dict
+    args:
+      agent_role: assistant
+  return_format: "{response[message][content]}"
+ 

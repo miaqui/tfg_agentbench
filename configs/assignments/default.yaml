@@ -1,0 +1,15 @@
+import: definition.yaml
+
+concurrency:
+  task:
+    dbbench-std: 1
+  agent:
+    ollama-qwen3-think: 1
+
+assignments:
+  - agent:
+      - ollama-qwen3-think
+    task:
+      - dbbench-std
+
+output: "outputs/{TIMESTAMP}"

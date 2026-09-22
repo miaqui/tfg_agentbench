@@ -1,0 +1,5 @@
+definition:
+  import: tasks/task_assembly_lite.yaml
+
+start:
+  webshop-std: 1

@@ -1,0 +1,15 @@
+import: definition.yaml
+
+concurrency:
+  task:
+    webshop-std: 1
+  agent:
+    ollama-qwen3-nothink: 1
+
+assignments:
+  - agent:
+      - ollama-qwen3-nothink
+    task:
+      - webshop-std
+
+output: "outputs/{TIMESTAMP}"
