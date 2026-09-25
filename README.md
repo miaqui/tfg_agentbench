@@ -2,7 +2,7 @@
 
 Este documento describe cómo poner en marcha AgentBench v0.2 y los entornos
 `dbbench-std`, `webshop-std`/`webshop-dev` y `ltp-std` a partir de la
-configuración construida en este proyecto.
+configuración construida en el TFG "LLMs como agentes: un análisis comparativo mediante AgentBench".
 
 ---
 
